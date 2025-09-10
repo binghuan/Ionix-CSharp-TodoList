@@ -88,18 +88,45 @@ Install Capacitor and build native apps:
 
 ```bash
 # Install Capacitor
-npm install @capacitor/core @capacitor/cli
+npm install @capacitor/core @capacitor/cli @capacitor/android
 
 # Initialize Capacitor
-npx cap init
+npx cap init TodoApp com.example.todoapp --web-dir=dist
 
-# Add platforms
-npx cap add ios
+# Build web app first
+ionic build --prod
+
+# Add Android platform
 npx cap add android
 
-# Build and sync
-ionic build
-npx cap sync
+# Sync to Android
+npx cap sync android
+
+# Build APK
+cd android && ./gradlew assembleDebug
+```
+
+📱 **Detailed Mobile Build Guides**: 
+- **Android**: [BUILD_ANDROID.md](BUILD_ANDROID.md)
+- **iOS**: [BUILD_IOS.md](BUILD_IOS.md)
+
+### iOS App Build
+
+```bash
+# Install iOS platform
+npm install @capacitor/ios
+
+# Build web app
+ionic build --prod
+
+# Add iOS platform
+npx cap add ios
+
+# Sync to iOS
+npx cap sync ios
+
+# Open in Xcode
+npx cap open ios
 ```
 
 ## Development Tools
