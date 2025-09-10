@@ -16,6 +16,44 @@ const config: CapacitorConfig = {
     ],
     // Allow cleartext traffic
     cleartext: true
+  },
+  plugins: {
+    CapacitorHttp: {
+      enabled: true
+    }
+  },
+  ios: {
+    contentInset: 'automatic',
+    preferences: {
+      'NSAppTransportSecurity': {
+        'NSAllowsArbitraryLoads': true,
+        'NSAllowsArbitraryLoadsInWebContent': true,
+        'NSAllowsLocalNetworking': true,
+        'NSExceptionDomains': {
+          '192.168.1.91': {
+            'NSExceptionAllowsInsecureHTTPLoads': true,
+            'NSIncludesSubdomains': true
+          },
+          'localhost': {
+            'NSExceptionAllowsInsecureHTTPLoads': true,
+            'NSIncludesSubdomains': true
+          },
+          '127.0.0.1': {
+            'NSExceptionAllowsInsecureHTTPLoads': true,
+            'NSIncludesSubdomains': true
+          }
+        }
+      },
+      'NSLocalNetworkUsageDescription': 'This app needs to access local network to connect to development server.'
+    }
+  },
+  android: {
+    allowMixedContent: true,
+    captureInput: true,
+    webContentsDebuggingEnabled: true,
+    preferences: {
+      'android.usesCleartextTraffic': 'true'
+    }
   }
 };
 

@@ -84,6 +84,29 @@ The frontend application will start at `http://localhost:8100`.
 
 > **Troubleshooting**: If you encounter the error "ionic serve can only be run in an Ionic project directory", make sure you're running the `ionic serve` command in the `client` directory.
 
+### 3. Mobile Development (Optional)
+
+For building and testing on Android/iOS devices:
+
+📖 **See detailed guide**: [DEVELOPMENT_SETUP.md](DEVELOPMENT_SETUP.md)
+
+**Quick setup:**
+```bash
+# Generate native platforms
+cd client
+npx cap add android
+npx cap add ios
+
+# Apply network configurations  
+./scripts/setup-mobile-config.sh
+
+# Sync and open in IDE
+npx cap sync
+npx cap open android  # or: npx cap open ios
+```
+
+> **Note**: Mobile platforms (android/ios folders) are excluded from Git and auto-generated. The setup script automatically configures network permissions for development.
+
 ## Technology Stack
 
 ### Frontend (Client)
