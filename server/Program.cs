@@ -16,7 +16,12 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularApp", policy =>
     {
-        policy.WithOrigins("http://localhost:8100", "http://localhost:4200")
+        policy.WithOrigins(
+                "http://localhost:8100",  // Ionic development server
+                "http://localhost:4200",  // Angular development server  
+                "http://localhost",       // Capacitor app
+                "https://localhost"       // HTTPS Capacitor app (fallback)
+              )
               .AllowAnyMethod()
               .AllowAnyHeader()
               .AllowCredentials();
