@@ -34,16 +34,37 @@ The application will start at `http://localhost:8100`.
 
 ```
 src/
+├── main.ts                   # 🚀 Application entry point and bootstrap
+├── polyfills.ts             # 🌐 Browser compatibility and Zone.js integration  
+├── test.ts                  # 🧪 Test environment configuration
+├── index.html               # 🚪 Main HTML container with mobile meta tags
+├── global.scss              # 🌈 Application-wide styles and Ionic customization
 ├── app/
-│   ├── models/          # Data models
-│   ├── services/        # API services
-│   ├── pages/
-│   │   └── todo/        # Todo page components
-│   └── app.module.ts    # Main module
-├── environments/        # Environment configuration
-├── theme/              # Theme styles
-└── assets/             # Static resources
+│   ├── app.module.ts        # 🏗️ Root module with dependency injection and service configuration
+│   ├── app-routing.module.ts # 🗺️ Navigation and lazy loading configuration
+│   ├── app.component.ts     # 🎭 Root component with basic layout structure
+│   ├── app.component.html   # 🏗️ Root template with <ion-router-outlet>
+│   ├── app.component.scss   # 🎭 Root component styling
+│   ├── models/
+│   │   └── todo.model.ts    # 📋 TypeScript interfaces (Todo, CreateTodoDto, UpdateTodoDto)
+│   ├── services/
+│   │   └── todo.service.ts  # 🌐 API communication with platform-aware URL configuration
+│   └── pages/
+│       └── todo/
+│           ├── todo.page.ts        # 🎮 Todo page business logic and state management
+│           ├── todo.page.html      # 📱 Todo UI with lists, forms, and mobile components
+│           ├── todo.page.scss      # 📝 Page-specific styling and animations
+│           ├── todo.module.ts      # 📦 Feature module with Ionic UI components
+│           └── todo-routing.module.ts # 🔗 Page-level routing configuration
+├── environments/
+│   ├── environment.ts       # 🛠️ Development API URL (http://localhost:8080/api)
+│   └── environment.prod.ts  # 🚀 Production configuration
+├── theme/
+│   └── variables.css        # 🎨 Color themes, dark mode, and platform-specific variables
+└── assets/                  # 📁 Static resources (images, icons, etc.)
 ```
+
+**📊 Architecture**: This structure follows **Angular best practices** and **Ionic framework conventions** with clear separation of concerns: **🔥 Core** (main.ts, app.module.ts), **🎨 UI** (templates, styles), **⚙️ Config** (environments, routing), and **🏗️ Structure** (models, services, pages).
 
 ## Main Features
 

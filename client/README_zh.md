@@ -34,16 +34,37 @@ ionic serve
 
 ```
 src/
+├── main.ts                   # 🚀 應用程式進入點與啟動
+├── polyfills.ts             # 🌐 瀏覽器相容性與 Zone.js 整合  
+├── test.ts                  # 🧪 測試環境配置
+├── index.html               # 🚪 主要 HTML 容器與行動裝置標籤
+├── global.scss              # 🌈 全應用程式樣式與 Ionic 自定義
 ├── app/
-│   ├── models/          # 資料模型
-│   ├── services/        # API 服務
-│   ├── pages/
-│   │   └── todo/        # Todo 頁面元件
-│   └── app.module.ts    # 主模組
-├── environments/        # 環境配置
-├── theme/              # 主題樣式
-└── assets/             # 靜態資源
+│   ├── app.module.ts        # 🏗️ 根模組與依賴注入配置
+│   ├── app-routing.module.ts # 🗺️ 路由與延遲載入配置
+│   ├── app.component.ts     # 🎭 根元件與基本布局結構
+│   ├── app.component.html   # 🏗️ 根模板與 <ion-router-outlet>
+│   ├── app.component.scss   # 🎭 根元件樣式
+│   ├── models/
+│   │   └── todo.model.ts    # 📋 TypeScript 介面 (Todo, CreateTodoDto, UpdateTodoDto)
+│   ├── services/
+│   │   └── todo.service.ts  # 🌐 API 通訊與平台感知 URL 配置
+│   └── pages/
+│       └── todo/
+│           ├── todo.page.ts        # 🎮 Todo 頁面業務邏輯與狀態管理
+│           ├── todo.page.html      # 📱 Todo UI 與清單、表單、行動元件
+│           ├── todo.page.scss      # 📝 頁面專用樣式與動畫
+│           ├── todo.module.ts      # 📦 功能模組與 Ionic UI 元件
+│           └── todo-routing.module.ts # 🔗 頁面級路由配置
+├── environments/
+│   ├── environment.ts       # 🛠️ 開發環境 API URL (http://localhost:8080/api)
+│   └── environment.prod.ts  # 🚀 生產環境配置
+├── theme/
+│   └── variables.css        # 🎨 色彩主題、深色模式與平台專用變數
+└── assets/                  # 📁 靜態資源 (圖片、圖示等)
 ```
+
+**📊 架構概覽**: 此結構遵循 **Angular 最佳實踐** 與 **Ionic 框架慣例**，清楚分離關注點：**🔥 核心** (main.ts, app.module.ts)、**🎨 UI** (模板、樣式)、**⚙️ 配置** (環境、路由)、**🏗️ 結構** (模型、服務、頁面)。
 
 ## 主要功能
 
@@ -62,7 +83,7 @@ src/
 ```typescript
 export const environment = {
   production: false,
-  apiUrl: 'https://localhost:7001/api'  // 修改為您的 API URL
+  apiUrl: 'http://localhost:8080/api'  // 修改為您的 API URL
 };
 ```
 
