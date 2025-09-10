@@ -1,6 +1,6 @@
 # Todo API - C# Web API Server
 
-**[English](README.en.md) | 繁體中文**
+**[English](README.md) | 繁體中文**
 
 這是 Todo List 應用程式的後端 API，使用 .NET 8 Web API 和 Entity Framework Core 開發。
 

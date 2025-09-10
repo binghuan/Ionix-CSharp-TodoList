@@ -1,6 +1,6 @@
 # Todo List Application
 
-**English | [繁體中文](README.md)**
+**English | [繁體中文](README_zh.md)**
 
 A Todo List application built with Ionic Angular as the frontend and C# Web API as the backend.
 

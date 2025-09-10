@@ -1,6 +1,6 @@
 # Todo Client - Ionic Angular App
 
-**English | [繁體中文](README.md)**
+**English | [繁體中文](README_zh.md)**
 
 This is the frontend part of the Todo List application, built with the Ionic Angular framework.
 
