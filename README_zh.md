@@ -4,6 +4,10 @@
 
 這是一個使用 Ionic Angular 作為前端和 C# Web API 作為後端的 Todo List 應用程式。
 
+## 📱 應用程式概覽
+
+![Todo 應用程式示意圖](README/illustration.png)
+
 ## 專案結構
 
 ```

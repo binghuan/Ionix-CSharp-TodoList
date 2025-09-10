@@ -4,6 +4,10 @@
 
 A Todo List application built with Ionic Angular as the frontend and C# Web API as the backend.
 
+## 📱 Application Overview
+
+![Todo Application Illustration](README/illustration.png)
+
 ## Project Structure
 
 ```
